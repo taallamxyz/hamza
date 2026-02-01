@@ -1,0 +1,84 @@
+[gd_scene load_steps=7 format=3 uid="uid://7i2oil7pxrby"]
+
+[ext_resource type="PackedScene" uid="uid://bg5cf23hc47c7" path="res://hamza.tscn" id="1_jwv3a"]
+[ext_resource type="PackedScene" uid="uid://cbnfud7u1o3rh" path="res://coin.tscn" id="2_dopym"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_lgp48"]
+size = Vector2(2000, 100)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jwv3a"]
+size = Vector2(2000, 100)
+
+[sub_resource type="QuadMesh" id="QuadMesh_dopym"]
+size = Vector2(100, 100)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ootpb"]
+size = Vector2(100, 100)
+
+[node name="level1" type="Node2D"]
+position = Vector2(1, -1)
+metadata/_edit_horizontal_guides_ = [-186.0]
+
+[node name="floor" type="StaticBody2D" parent="."]
+position = Vector2(585, 633)
+metadata/_edit_group_ = true
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="floor"]
+mesh = SubResource("QuadMesh_lgp48")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="floor"]
+shape = SubResource("RectangleShape2D_jwv3a")
+
+[node name="RigidBody2D" type="RigidBody2D" parent="."]
+position = Vector2(1582.0001, -382)
+rotation = -4.8858223
+scale = Vector2(5.6505356, -11.449006)
+metadata/_edit_group_ = true
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="RigidBody2D"]
+mesh = SubResource("QuadMesh_dopym")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
+shape = SubResource("RectangleShape2D_ootpb")
+
+[node name="RigidBody2D2" type="RigidBody2D" parent="."]
+position = Vector2(702, 159)
+rotation = -2.4017484
+metadata/_edit_group_ = true
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="RigidBody2D2"]
+mesh = SubResource("QuadMesh_dopym")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D2"]
+shape = SubResource("RectangleShape2D_ootpb")
+
+[node name="RigidBody2D3" type="RigidBody2D" parent="."]
+position = Vector2(726, 365)
+rotation = -2.4017484
+metadata/_edit_group_ = true
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="RigidBody2D3"]
+mesh = SubResource("QuadMesh_dopym")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D3"]
+shape = SubResource("RectangleShape2D_ootpb")
+
+[node name="hamza" parent="." instance=ExtResource("1_jwv3a")]
+position = Vector2(443, 518.00006)
+rotation = -3.1749332
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="coin1" parent="." instance=ExtResource("2_dopym")]
+position = Vector2(306, 418)
+
+[node name="coin2" parent="." instance=ExtResource("2_dopym")]
+position = Vector2(378, 291)
+
+[node name="coin3" parent="." instance=ExtResource("2_dopym")]
+position = Vector2(423, 420)
+
+[node name="coin4" parent="." instance=ExtResource("2_dopym")]
+position = Vector2(573, 367)
+
+[node name="coin5" parent="." instance=ExtResource("2_dopym")]
+position = Vector2(394, 363)

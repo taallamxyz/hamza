@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://bg5cf23hc47c7"]
+
+[ext_resource type="Script" uid="uid://cieyeppc2us3r" path="res://hamza.gd" id="1_syyhm"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_ro06l"]
+size = Vector2(100, 100)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_syyhm"]
+size = Vector2(100, 100)
+
+[node name="hamza" type="CharacterBody2D"]
+script = ExtResource("1_syyhm")
+metadata/_edit_group_ = true
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
+modulate = Color(0.15136218, 0.20478493, 1, 1)
+mesh = SubResource("QuadMesh_ro06l")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_syyhm")
