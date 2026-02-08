@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://bty4pbnds02h1"]
+
+[ext_resource type="Script" uid="uid://ddumsbhu5mq70" path="res://Scenes/Prefabs/ui.gd" id="1_qbjo8"]
+[ext_resource type="Texture2D" uid="uid://bqh5mqtnn28s1" path="res://assets/Sprites/Collectables/coin.png" id="2_boxcm"]
+
+[node name="UI" type="CanvasLayer" unique_id=1889737991]
+script = ExtResource("1_qbjo8")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=934944804]
+offset_left = 36.0
+offset_top = 20.0
+offset_right = 190.0
+offset_bottom = 320.0
+scale = Vector2(0.5, 0.5)
+theme_override_constants/separation = -20
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer" unique_id=1489485798]
+layout_mode = 2
+texture = ExtResource("2_boxcm")
+
+[node name="Label" type="Label" parent="VBoxContainer" unique_id=356011085]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 100
+text = "0"

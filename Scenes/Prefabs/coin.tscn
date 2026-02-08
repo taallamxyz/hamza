@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://cbnfud7u1o3rh"]
+
+[ext_resource type="Script" uid="uid://c15htepy7raog" path="res://Scenes/Scripts/coin.gd" id="1_d5gmh"]
+[ext_resource type="Texture2D" uid="uid://bqh5mqtnn28s1" path="res://assets/Sprites/Collectables/coin.png" id="2_0t63x"]
+[ext_resource type="AudioStream" uid="uid://ci8n1yjonssyi" path="res://assets/Sounds/Coin.mp3" id="3_v7riw"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0t63x"]
+radius = 22.203604
+
+[node name="coin" type="Area2D" unique_id=50725719]
+script = ExtResource("1_d5gmh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1297298374]
+shape = SubResource("CircleShape2D_0t63x")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=51818276]
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("2_0t63x")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1765945864]
+stream = ExtResource("3_v7riw")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

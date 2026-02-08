@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://7i2oil7pxrby"]
+
+[ext_resource type="PackedScene" uid="uid://bg5cf23hc47c7" path="res://Scenes/Prefabs/hamza.tscn" id="1_16p8j"]
+[ext_resource type="PackedScene" uid="uid://cbnfud7u1o3rh" path="res://Scenes/Prefabs/coin.tscn" id="2_1ukdm"]
+[ext_resource type="PackedScene" uid="uid://bty4pbnds02h1" path="res://Scenes/Prefabs/ui.tscn" id="3_1ukdm"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_lgp48"]
+size = Vector2(2000, 100)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jwv3a"]
+size = Vector2(2000, 100)
+
+[node name="level1" type="Node2D" unique_id=605236361]
+metadata/_edit_horizontal_guides_ = [-186.0]
+
+[node name="floor" type="StaticBody2D" parent="." unique_id=886768646]
+position = Vector2(4.9999995, 659)
+rotation = -3.141508
+scale = Vector2(0.9565161, 1)
+metadata/_edit_group_ = true
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="floor" unique_id=1140316847]
+mesh = SubResource("QuadMesh_lgp48")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="floor" unique_id=241772858]
+shape = SubResource("RectangleShape2D_jwv3a")
+
+[node name="hamza" parent="." unique_id=505733954 instance=ExtResource("1_16p8j")]
+position = Vector2(-750, 441)
+up_direction = Vector2(0.0001, 1)
+
+[node name="Camera2D" type="Camera2D" parent="hamza" unique_id=1945067367]
+rotation = -0.1990036
+
+[node name="coin1" parent="." unique_id=1327408558 instance=ExtResource("2_1ukdm")]
+position = Vector2(-13, 318)
+
+[node name="coin2" parent="." unique_id=311994793 instance=ExtResource("2_1ukdm")]
+position = Vector2(296, 399)
+
+[node name="coin3" parent="." unique_id=1307835433 instance=ExtResource("2_1ukdm")]
+position = Vector2(-302, 458)
+
+[node name="coin4" parent="." unique_id=1572412923 instance=ExtResource("2_1ukdm")]
+position = Vector2(556, 461)
+
+[node name="coin5" parent="." unique_id=884008810 instance=ExtResource("2_1ukdm")]
+position = Vector2(611, 330)
+
+[node name="UI" parent="." unique_id=1889737991 instance=ExtResource("3_1ukdm")]
