@@ -1,20 +1,116 @@
-[gd_scene load_steps=4 format=3 uid="uid://bg5cf23hc47c7"]
+[gd_scene format=3 uid="uid://bg5cf23hc47c7"]
 
 [ext_resource type="Script" uid="uid://cieyeppc2us3r" path="res://hamza.gd" id="1_syyhm"]
-
-[sub_resource type="QuadMesh" id="QuadMesh_ro06l"]
-size = Vector2(100, 100)
+[ext_resource type="Texture2D" uid="uid://cokfxlkvvy060" path="res://assets/Blender/Characters/1/Idle/0001.png" id="2_qeu32"]
+[ext_resource type="Texture2D" uid="uid://dpcxsv6kquoar" path="res://assets/Blender/Characters/1/Idle/0002.png" id="3_ij5ev"]
+[ext_resource type="Texture2D" uid="uid://b6jc5qp1vxegt" path="res://assets/Blender/Characters/1/Idle/0003.png" id="4_wppf2"]
+[ext_resource type="Texture2D" uid="uid://chu823x344pyu" path="res://assets/Blender/Characters/1/Idle/0004.png" id="5_bsu38"]
+[ext_resource type="Texture2D" uid="uid://csjxsi23xqire" path="res://assets/Blender/Characters/1/Idle/0005.png" id="6_5tn0p"]
+[ext_resource type="Texture2D" uid="uid://b0x3bgbc1f54o" path="res://assets/Blender/Characters/1/Idle/0006.png" id="7_7g2hf"]
+[ext_resource type="Texture2D" uid="uid://b626u44ijgq6" path="res://assets/Blender/Characters/1/Idle/0007.png" id="8_6qqkm"]
+[ext_resource type="Texture2D" uid="uid://cgs0pfaaqrnk7" path="res://assets/Blender/Characters/1/Idle/0008.png" id="9_iynmd"]
+[ext_resource type="Texture2D" uid="uid://gw5spj2ijvtm" path="res://assets/Blender/Characters/1/Idle/0009.png" id="10_x6h0t"]
+[ext_resource type="Texture2D" uid="uid://dtwmyjtbpy6rf" path="res://assets/Blender/Characters/1/Walk/0001.png" id="11_pw3x3"]
+[ext_resource type="Texture2D" uid="uid://ku0t0jleykxx" path="res://assets/Blender/Characters/1/Walk/0002.png" id="12_cvlas"]
+[ext_resource type="Texture2D" uid="uid://ddd07flp0ulof" path="res://assets/Blender/Characters/1/Walk/0003.png" id="13_vh2lo"]
+[ext_resource type="Texture2D" uid="uid://dsqtghahia7bh" path="res://assets/Blender/Characters/1/Walk/0004.png" id="14_ijajk"]
+[ext_resource type="Texture2D" uid="uid://bqlxyd3v3i71r" path="res://assets/Blender/Characters/1/Walk/0005.png" id="15_asr5x"]
+[ext_resource type="Texture2D" uid="uid://it2pap0d5mxo" path="res://assets/Blender/Characters/1/Walk/0006.png" id="16_7t8fa"]
+[ext_resource type="Texture2D" uid="uid://dff276y65on1v" path="res://assets/Blender/Characters/1/Walk/0007.png" id="17_tlrlm"]
+[ext_resource type="Texture2D" uid="uid://c83jfjflt03jj" path="res://assets/Blender/Characters/1/Walk/0008.png" id="18_m4pi3"]
+[ext_resource type="Texture2D" uid="uid://eydnlx312ijs" path="res://assets/Blender/Characters/1/Walk/0009.png" id="19_makyq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_syyhm"]
-size = Vector2(100, 100)
+size = Vector2(67, 95)
 
-[node name="hamza" type="CharacterBody2D"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_pw3x3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_qeu32")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_ij5ev")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_wppf2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_bsu38")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_5tn0p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_7g2hf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_6qqkm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_iynmd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_x6h0t")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_pw3x3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_cvlas")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_vh2lo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_ijajk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_asr5x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_7t8fa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_tlrlm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_m4pi3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_makyq")
+}],
+"loop": true,
+"name": &"Walk",
+"speed": 5.0
+}]
+
+[sub_resource type="Animation" id="Animation_cvlas"]
+resource_name = "Idle"
+length = 1.0666667
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_vh2lo"]
+_data = {
+&"Idle": SubResource("Animation_cvlas")
+}
+
+[node name="hamza" type="CharacterBody2D" unique_id=407963562]
 script = ExtResource("1_syyhm")
 metadata/_edit_group_ = true
 
-[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
-modulate = Color(0.15136218, 0.20478493, 1, 1)
-mesh = SubResource("QuadMesh_ro06l")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=262751758]
+position = Vector2(0.5, -2.5)
 shape = SubResource("RectangleShape2D_syyhm")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2017169056]
+sprite_frames = SubResource("SpriteFrames_pw3x3")
+animation = &"Walk"
+frame_progress = 0.7042216
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1277075108]
+libraries/ = SubResource("AnimationLibrary_vh2lo")
