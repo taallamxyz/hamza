@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bg5cf23hc47c7"]
 
-[ext_resource type="Script" uid="uid://cieyeppc2us3r" path="res://Scenes/Scripts/hamza.gd" id="1_syyhm"]
+[ext_resource type="Script" uid="uid://cieyeppc2us3r" path="res://Scripts/hamza.gd" id="1_syyhm"]
 [ext_resource type="Texture2D" uid="uid://cokfxlkvvy060" path="res://assets/Sprites/Characters/1/Idle/0001.png" id="2_qeu32"]
 [ext_resource type="Texture2D" uid="uid://dpcxsv6kquoar" path="res://assets/Sprites/Characters/1/Idle/0002.png" id="3_ij5ev"]
 [ext_resource type="Texture2D" uid="uid://b6jc5qp1vxegt" path="res://assets/Sprites/Characters/1/Idle/0003.png" id="4_wppf2"]
@@ -20,8 +20,9 @@
 [ext_resource type="Texture2D" uid="uid://c83jfjflt03jj" path="res://assets/Sprites/Characters/1/Walk/0008.png" id="18_m4pi3"]
 [ext_resource type="Texture2D" uid="uid://eydnlx312ijs" path="res://assets/Sprites/Characters/1/Walk/0009.png" id="19_makyq"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_syyhm"]
-size = Vector2(67, 95)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4etrg"]
+radius = 30.0
+height = 72.0
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_pw3x3"]
 animations = [{
@@ -91,14 +92,16 @@ animations = [{
 }]
 
 [node name="hamza" type="CharacterBody2D" unique_id=407963562 groups=["player"]]
+scale = Vector2(1.5, 1.5)
 script = ExtResource("1_syyhm")
-metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=262751758]
-position = Vector2(0.5, -2.5)
-shape = SubResource("RectangleShape2D_syyhm")
+position = Vector2(-5, 12)
+shape = SubResource("CapsuleShape2D_4etrg")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2017169056]
 sprite_frames = SubResource("SpriteFrames_pw3x3")
 animation = &"Walk"
 frame_progress = 0.15387481
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1313972561]

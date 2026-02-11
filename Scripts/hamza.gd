@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 
 const SPEED = 300.0
-const JUMP_VELOCITY =-400.0
+const JUMP_VELOCITY =-800.0
 
 @onready var animated_sprite = $AnimatedSprite2D
 
@@ -12,7 +12,7 @@ func _physics_process(delta: float) -> void:
 		velocity += get_gravity() * delta
 
 	# Handle jump.
-	if Input.is_action_just_pressed("ui_accept") :
+	if Input.is_action_just_pressed("ui_accept") and is_on_floor() :
 		velocity.y = JUMP_VELOCITY
 
 	# Get the input direction and handle the movement/deceleration.
@@ -27,3 +27,7 @@ func _physics_process(delta: float) -> void:
 		animated_sprite.play("Idle")
 
 	move_and_slide()
+
+
+func _on_out_area_body_entered(body: Node2D) -> void:
+	get_tree().reload_current_scene()

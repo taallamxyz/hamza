@@ -21,3 +21,7 @@ config/features=PackedStringArray("4.6", "Forward Plus")
 [autoload]
 
 GameManager="*uid://chsmv2smewuu2"
+
+[physics]
+
+2d/default_gravity=2000.0
